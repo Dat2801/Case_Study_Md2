@@ -22,7 +22,8 @@ public class Main implements Serializable {
             System.out.println("3. Sửa thông tin khách thuê");
             System.out.println("4. Tìm kiếm khách thuê");
             System.out.println("5. Thanh toán phòng");
-            System.out.println("6. Thoát");
+            System.out.println("6. Xóa tên khách thuê");
+            System.out.println("7. Thoát");
             n = Integer.parseInt(scanner.nextLine());
             switch (n) {
                 case 1:
@@ -40,7 +41,9 @@ public class Main implements Serializable {
                 case 5:
                     roomProgram.bill();
                     break;
+                case 6:
+                    roomProgram.delete();
             }
-        } while (n != 6);
+        } while (n != 7);
     }
 }

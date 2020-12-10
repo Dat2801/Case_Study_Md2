@@ -54,6 +54,9 @@ public class RoomProgram implements Serializable {
     public void bill() throws IOException, ClassNotFoundException {
         Search_Bill.billRoom();
     }
+    public void delete()throws IOException, ClassNotFoundException{
+        Delete.deleteInformation();
+    }
 }
 
 
