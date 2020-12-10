@@ -1,22 +1,21 @@
 package main;
-
-import object.Person;
-import object.Room;
 import program.PersonProgram;
 import program.RoomProgram;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;
 
 public class Main implements Serializable {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException, ClassNotFoundException{
         Scanner scanner = new Scanner(System.in);
         PersonProgram personProgram = new PersonProgram();
         RoomProgram roomProgram = new RoomProgram();
 
         int n = 0;
         do {
+            roomProgram.writerFile();
+            roomProgram.readerFile();
+
             System.out.println("------------Menu-------------");
             System.out.println("1. Đăng kí khách thuê");
             System.out.println("2. Hiển thị thông tin khách thuê");
@@ -27,21 +26,19 @@ public class Main implements Serializable {
             n = Integer.parseInt(scanner.nextLine());
             switch (n) {
                 case 1:
-                    roomProgram.addInformation();
+                    roomProgram.add();
                     break;
                 case 2:
-                    roomProgram.showInformation();
+                    roomProgram.show();
                     break;
                 case 3:
-                    roomProgram.editInformation();
+                    roomProgram.edit();
                     break;
                 case 4:
-                    roomProgram.searchInformation();
+                    roomProgram.search();
                     break;
                 case 5:
-                    roomProgram.billRoom();
-                    break;
-                case 6:
+                    roomProgram.bill();
                     break;
             }
         } while (n != 6);

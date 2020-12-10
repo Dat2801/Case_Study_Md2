@@ -1,8 +1,8 @@
 package object;
 
+import java.io.Serializable;
 import java.util.Date;
-
-public class Room {
+public class Room implements Serializable {
     private int roomNumber;
     private Date startDay;
     private Date endDay;
