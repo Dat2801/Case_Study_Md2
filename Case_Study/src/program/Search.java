@@ -26,7 +26,6 @@ public class Search {
 
     public static void billRoom() {
         Scanner scanner = new Scanner(System.in);
-        int idCard = Integer.parseInt(scanner.nextLine());
         Room room = searchInformation();
         Date date1 = null;
         Date date2 = null;
