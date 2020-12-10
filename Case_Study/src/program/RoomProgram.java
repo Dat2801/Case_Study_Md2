@@ -38,21 +38,21 @@ public class RoomProgram implements Serializable {
     }
 
     public void edit() throws IOException, ClassNotFoundException {
-        Edit.editInformation();
+        Edit_Show.editInformation();
     }
 
     public void show() throws IOException, ClassNotFoundException {
         writerFile();
         readerFile();
-        Edit.showInformation();
+        Edit_Show.showInformation();
     }
 
     public void search() throws IOException, ClassNotFoundException {
-        Search.searchInformation();
+        Search_Bill.searchInformation();
     }
 
     public void bill() throws IOException, ClassNotFoundException {
-        Search.billRoom();
+        Search_Bill.billRoom();
     }
 }
 

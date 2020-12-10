@@ -2,7 +2,7 @@ package program;
 
 import object.Room;
 import java.util.Scanner;
-public class Edit {
+public class Edit_Show {
     public static void editInformation() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập tên khách thuê cần chỉnh sửa: ");

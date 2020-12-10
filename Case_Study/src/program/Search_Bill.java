@@ -5,7 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
-public class Search {
+public class Search_Bill {
 
     public static Room searchInformation() {
         Scanner scanner = new Scanner(System.in);
