@@ -1,6 +1,8 @@
 package main;
 import program.PersonProgram;
 import program.RoomProgram;
+import program.Show;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;

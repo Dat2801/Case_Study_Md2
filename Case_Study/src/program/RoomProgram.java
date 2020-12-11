@@ -15,16 +15,16 @@ public class RoomProgram implements Serializable {
     }
 
     public ArrayList<Room> readerFile() throws IOException, ClassNotFoundException {
-        FileInputStream fileOutputStream = new FileInputStream("hotel.txt");
-        ObjectInputStream objectInputStream = new ObjectInputStream(fileOutputStream);
+        FileInputStream fileInputStream = new FileInputStream("hotel.txt");
+        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
         rooms = (ArrayList<Room>) objectInputStream.readObject();
         objectInputStream.close();
-        fileOutputStream.close();
+        fileInputStream.close();
         return rooms;
     }
 
     public void writerFile() throws IOException, ClassNotFoundException {
-        FileOutputStream fileOutputStream = new FileOutputStream("hotel.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream("hotel.txt", true);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(getRooms());
         objectOutputStream.close();
@@ -38,13 +38,12 @@ public class RoomProgram implements Serializable {
     }
 
     public void edit() throws IOException, ClassNotFoundException {
-        Edit_Show.editInformation();
+        Edit.editInformation();
     }
 
     public void show() throws IOException, ClassNotFoundException {
-        writerFile();
         readerFile();
-        Edit_Show.showInformation();
+        Show.showInformation();
     }
 
     public void search() throws IOException, ClassNotFoundException {
