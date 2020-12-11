@@ -1,5 +1,6 @@
 package program;
 
+import object.Person;
 import object.Room;
 
 import java.util.Scanner;
@@ -13,7 +14,7 @@ public class Delete {
         for (int i = 0; i < RoomProgram.rooms.size(); i++) {
             if (name.equals(RoomProgram.rooms.get(i).getPerson().getName())) {
                 System.out.println(RoomProgram.rooms.remove(n));
-                n++;
+                n--;
             }
         }
         if (n == 0) {

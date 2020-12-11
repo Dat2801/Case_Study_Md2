@@ -54,4 +54,7 @@ public class Person implements Serializable {
                 "Số chứng minh thư:" + idCard + "\n"
                 ;
     }
+    public String toStringFile(){
+        return name + "," + age + "," + idCard;
+    }
 }

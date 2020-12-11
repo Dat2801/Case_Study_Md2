@@ -1,7 +1,9 @@
 package object;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
 public class Room implements Serializable {
     private int roomNumber;
     private Date startDay;
@@ -10,7 +12,8 @@ public class Room implements Serializable {
     private double rateRoom;
     private Person person;
 
-    public Room(){}
+    public Room() {
+    }
 
     public Room(int roomNumber, Date startDay, Date endDay, String sizeRoom, double rateRoom, Person person) {
         this.roomNumber = roomNumber;
@@ -72,14 +75,24 @@ public class Room implements Serializable {
 
     @Override
     public String toString() {
-        return  "- Thông tin phòng:" + "\n" +
-                "Số phòng: " + roomNumber +"\n" +
+        return "- Thông tin phòng:" + "\n" +
+                "Số phòng: " + roomNumber + "\n" +
                 "Ngày bắt đầu thuê:" + startDay + "\n" +
                 "Ngày kết thúc thuê:" + endDay + "\n" +
                 "Loại phòng:" + sizeRoom + "\n" +
                 "Giá phòng:" + rateRoom + "vnd" + "\n" +
-                "- Thông tin khách thuê:"+ "\n" + person
+                "- Thông tin khách thuê:" + "\n" + person
                 ;
+    }
+
+    public String toStringFIle() {
+        return roomNumber + "," +
+                new SimpleDateFormat("dd/MM/yyyy").format(startDay) +
+                "," +
+                new SimpleDateFormat("dd/MM/yyyy").format(endDay) + "," +
+                sizeRoom + "," +
+                rateRoom + ","
+                + person.toStringFile();
     }
 }
 

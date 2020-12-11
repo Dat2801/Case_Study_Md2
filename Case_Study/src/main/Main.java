@@ -8,14 +8,9 @@ import java.util.Scanner;
 public class Main implements Serializable {
     public static void main(String[] args) throws IOException, ClassNotFoundException{
         Scanner scanner = new Scanner(System.in);
-        PersonProgram personProgram = new PersonProgram();
         RoomProgram roomProgram = new RoomProgram();
-
         int n = 0;
         do {
-            roomProgram.writerFile();
-            roomProgram.readerFile();
-
             System.out.println("------------Menu-------------");
             System.out.println("1. Đăng kí khách thuê");
             System.out.println("2. Hiển thị thông tin khách thuê");
@@ -43,6 +38,7 @@ public class Main implements Serializable {
                     break;
                 case 6:
                     roomProgram.delete();
+                    break;
             }
         } while (n != 7);
     }
