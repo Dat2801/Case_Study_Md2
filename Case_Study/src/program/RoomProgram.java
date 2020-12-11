@@ -11,7 +11,7 @@ public class RoomProgram implements Serializable {
     }
 
     public void setRooms(ArrayList<Room> rooms) {
-        this.rooms = rooms;
+        RoomProgram.rooms = rooms;
     }
 
     public ArrayList<Room> readerFile() throws IOException, ClassNotFoundException {
@@ -23,7 +23,7 @@ public class RoomProgram implements Serializable {
         return rooms;
     }
 
-    public void writerFile() throws IOException, ClassNotFoundException {
+    public void writerFile() throws IOException {
         FileOutputStream fileOutputStream = new FileOutputStream("hotel.txt", true);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(getRooms());
@@ -38,12 +38,12 @@ public class RoomProgram implements Serializable {
     }
 
     public void edit() throws IOException, ClassNotFoundException {
-        Edit.editInformation();
+        Edit_Show.editInformation();
     }
 
     public void show() throws IOException, ClassNotFoundException {
         readerFile();
-        Show.showInformation();
+        Edit_Show.showInformation();
     }
 
     public void search() throws IOException, ClassNotFoundException {

@@ -1,10 +1,12 @@
 package program;
 
 import object.Room;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+
 public class Search_Bill {
 
     public static Room searchInformation() {
@@ -36,11 +38,13 @@ public class Search_Bill {
             date2 = new SimpleDateFormat("dd/MM/yyyy").parse(scanner.nextLine());
         } catch (ParseException e) {
             System.out.println("Mời bạn nhập lại");
-        } finally {
+        }
+        finally {
             long startDay = date1.getTime();
             long endDay = date2.getTime();
             System.out.println("Số tiền cần phải thanh toán: " + (endDay - startDay) / (1000 * 60 * 60 * 24) * room.getRateRoom() + "vnd");
         }
+
     }
 
 }

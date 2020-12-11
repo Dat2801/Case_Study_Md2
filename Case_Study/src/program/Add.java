@@ -1,11 +1,13 @@
 package program;
 
 import object.Room;
+
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+
 public class Add implements Serializable {
     public static void addInformation() {
         Scanner scanner = new Scanner(System.in);
@@ -44,6 +46,7 @@ public class Add implements Serializable {
         } catch (ParseException e) {
         }
         room.setEndDay(date1);
+
         RoomProgram.rooms.add(room);
     }
 }
