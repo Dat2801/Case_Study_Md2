@@ -23,7 +23,7 @@ public class RoomProgram implements Serializable {
         File file = new File("hotel.txt");
         FileWriter fileWriter = null;
         try {
-            fileWriter = new FileWriter(file,true);
+            fileWriter = new FileWriter(file);
             for (Room room : rooms) {
                 fileWriter.append(room.toStringFIle());
                 fileWriter.append("\n");
@@ -49,7 +49,7 @@ public class RoomProgram implements Serializable {
             while ((line = bufferedReader.readLine()) != null) {
                 String[] split = line.split(",");
                 int id = Integer.parseInt(split[0]);
-                Date startDate =  new SimpleDateFormat("dd/MM/yyyy").parse(split[1]);
+                Date startDate = new SimpleDateFormat("dd/MM/yyyy").parse(split[1]);
                 Date endDate = new SimpleDateFormat("dd/MM/yyyy").parse(split[2]);
                 String sizeRoom = split[3];
                 double rateRoom = Double.parseDouble(split[4]);
@@ -75,7 +75,7 @@ public class RoomProgram implements Serializable {
 
 
     public void add() {
-//        setRooms(readerFile());
+        setRooms(readerFile());
         Add.addInformation();
         writerFile(rooms);
     }
@@ -84,8 +84,7 @@ public class RoomProgram implements Serializable {
         Edit.editInformation();
     }
 
-    public void show()
-    {
+    public void show() {
         readerFile();
         for (Room room : getRooms()) {
             System.out.println(room.toString());
