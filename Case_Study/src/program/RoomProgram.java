@@ -21,6 +21,7 @@ public class RoomProgram implements Serializable {
 
     public void writerFile(ArrayList<Room> rooms) {
         File file = new File("hotel.txt");
+
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
@@ -37,6 +38,7 @@ public class RoomProgram implements Serializable {
     public ArrayList<Room> readerFile() {
         File file = new File("hotel.txt");
         FileReader fileReader = null;
+        ArrayList<Room> roomsRead = new ArrayList<>();
         BufferedReader bufferedReader = null;
         try {
             if (!file.exists()) {
@@ -55,7 +57,7 @@ public class RoomProgram implements Serializable {
                 double rateRoom = Double.parseDouble(split[4]);
                 String personName = split[5];
                 int personAge = Integer.parseInt(split[6]);
-                int personID = Integer.valueOf(split[7]);
+                int personID = Integer.parseInt(split[7]);
                 Person person = new Person();
 
                 person.setName(personName);
@@ -63,14 +65,14 @@ public class RoomProgram implements Serializable {
                 person.setIdCard(personID);
 
                 Room room = new Room(id, startDate, endDate, sizeRoom, rateRoom, person);
-                rooms.add(room);
+                roomsRead.add(room);
             }
             bufferedReader.close();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return rooms;
+        return roomsRead;
     }
 
 
@@ -85,7 +87,7 @@ public class RoomProgram implements Serializable {
     }
 
     public void show() {
-        readerFile();
+        setRooms(readerFile());
         for (Room room : getRooms()) {
             System.out.println(room.toString());
         }
